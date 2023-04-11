@@ -23,12 +23,15 @@ root@OpenWrt:~# tree /usr/share/AnyLink/
 │   ├── server.toml
 │   ├── vpn_cert.crt
 │   └── vpn_cert.key
-└── systemd
-    └── anylink.service
+└── service
+    └── AnyLink
 
 3 directories, 11 files
 ```
-service中文件直接导入到/etc/init.d/下<br />
+service中文件直接导入到/etc/init.d/下
+```
+cp /usr/share/AnyLink/service/AnyLink /etc/init.d/
+```
 加执行权限
 ```
 chmod +x /etc/init.d/AnyLink
