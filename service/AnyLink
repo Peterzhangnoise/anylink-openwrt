@@ -1,0 +1,29 @@
+#!/bin/sh /etc/rc.common
+
+START=99
+STOP=15
+
+start() {
+   echo "Starting anylink"
+  /usr/share/AnyLink/anylink --conf=/usr/share/AnyLink/conf/server.toml &
+}
+
+stop() {
+   killall anylink
+   echo "Kill anylink"
+}
+
+restart() {
+  echo "Restarting anylink"
+  /etc/init.d/anylink stop
+  /etc/init.d/anylink start
+}
+
+status() {
+  if pgrep -x "anylink" > /dev/null
+  then
+    echo "anylink is running"
+  else
+    echo "myservice is not running"
+  fi
+}

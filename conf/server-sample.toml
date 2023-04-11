@@ -1,0 +1,81 @@
+#示例配置信息
+
+#其他配置文件,可以使用绝对路径
+#或者相对于 anylink 二进制文件的路径
+
+#数据文件
+db_type = "sqlite3"
+db_source = "./conf/anylink.db"
+#证书文件 使用跟nginx一样的证书即可
+cert_file = "./conf/vpn_cert.crt"
+cert_key = "./conf/vpn_cert.key"
+files_path = "./conf/files"
+profile = "./conf/profile.xml"
+#日志目录,为空写入标准输出
+#log_path = "./log"
+log_path = ""
+log_level = "debug"
+pprof = false
+
+#系统名称
+issuer = "XX公司VPN"
+#后台管理用户
+admin_user = "admin"
+#pass 123456
+admin_pass = "$2a$10$UQ7C.EoPifDeJh6d8.31TeSPQU7hM/NOM2nixmBucJpAuXDQNqNke"
+jwt_secret = "abcdef.0123456789.abcdef"
+
+
+#服务监听地址
+server_addr = ":443"
+#开启 DTLS, 默认关闭
+server_dtls = false
+server_dtls_addr = ":443"
+#后台服务监听地址
+admin_addr = ":8800"
+#开启tcp proxy protocol协议
+proxy_protocol = false
+
+link_mode = "tun"
+
+#客户端分配的ip地址池
+ipv4_master = "eth0"
+ipv4_cidr = "192.168.90.0/24"
+ipv4_gateway = "192.168.90.1"
+ipv4_start = "192.168.90.100"
+ipv4_end = "192.168.90.200"
+
+#最大客户端数量
+max_client = 100
+#单个用户同时在线数量
+max_user_client = 3
+#IP租期(秒)
+ip_lease = 1209600
+
+#默认选择的组
+default_group = "one"
+
+#客户端失效检测时间(秒) dpd > keepalive
+cstp_keepalive = 6
+cstp_dpd = 10
+mobile_keepalive = 15
+mobile_dpd = 20
+
+#设置最大传输单元
+mtu = 1460
+
+# 要发布的默认域
+default_domain = "example.com"
+#default_domain = "example.com abc.example.com"
+
+#session过期时间，用于断线重连，0永不过期
+session_timeout = 3600
+auth_timeout = 0
+audit_interval = -1
+
+show_sql = false
+
+#是否自动添加nat
+iptables_nat = true
+
+
