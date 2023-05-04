@@ -5,13 +5,12 @@
 
 #数据文件
 db_type = "sqlite3"
-db_source = "/usr/share/AnyLink/conf/anylink.db"
+db_source = "./conf/anylink.db"
 #证书文件
-cert_file = "/usr/share/AnyLink/conf/vpn_cert.crt"
-cert_key = "/usr/share/AnyLink/conf/vpn_cert.key"
-files_path = "/usr/share/AnyLink/conf/files"
+cert_file = "./conf/vpn_cert.crt"
+cert_key = "./conf/vpn_cert.key"
+files_path = "./conf/files"
 log_level = "debug"
-profile = "/usr/share/AnyLink/conf/profile.xml"
 
 #系统名称
 issuer = "XX公司VPN"
@@ -22,7 +21,7 @@ admin_pass = "$2a$10$UQ7C.EoPifDeJh6d8.31TeSPQU7hM/NOM2nixmBucJpAuXDQNqNke"
 jwt_secret = "abcdef.0123456789.abcdef"
 
 #服务监听地址
-server_addr = ":4443"
+server_addr = ":443"
 #后台服务监听地址
 admin_addr = ":8800"
 
@@ -36,3 +35,9 @@ ipv4_end = "192.168.90.200"
 
 #是否自动添加nat
 iptables_nat = true
+
+
+#客户端显示详细错误信息(线上环境慎开启)
+display_error = false
+
+
