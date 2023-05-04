@@ -18,12 +18,3 @@ restart() {
   /etc/init.d/anylink stop
   /etc/init.d/anylink start
 }
-
-status() {
-  if pgrep -x "anylink" > /dev/null
-  then
-    echo "anylink is running"
-  else
-    echo "myservice is not running"
-  fi
-}
